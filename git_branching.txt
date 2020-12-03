@@ -1,0 +1,20 @@
+two things :
+-> master branch 
+-> feature branch
+
+- each branch commit is independent of other branchs changes.
+1: command: git checkout "file name"
+used to switch between branches
+
+2: command: git checkout -b "branch name"
+keep it descpriptive according to your application.
+
+3: commadn: git merge 
+
+4: command : git diff
+
+******git pull request***************
+You make local code changes and then submit those changes to a remote project maintainer for review before those changes are implemented, or merged. 
+This is called a pull request; you are requesting that someone reviews and approves your changes before they become final.
+
+1. git pull origin master

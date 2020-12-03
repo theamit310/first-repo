@@ -1,0 +1,38 @@
+1. command: git clone
+you can get the clone/download from your github website and copy that thing inside in your terminal with the command "git clone" and the whole directory would be copied inside the folder you are working on.
+
+2. command: git status
+shows all the files that have been created, deleted or modified but havent been commited yet.
+
+now i have modified the file "read me" the status commmand shows that one file is modified.
+i also created a file called "index.html" but the terminal says that the file is untracked. meaning the git doesnt know about the file yet.
+bringing us to the conclusion that before rolling out any commit we must add that file inside our git repositry when working from code editor or terminal.
+
+3. command: git add .
+using add . (period) command allows git to track all the changes and untracked file.
+
+4. command: git commit -m ("you have to put a brief message regarding the git command getting excuted) 
+note: you can add discpription of the first msg with another -m command.
+
+5. command :git push
+code would only be live if your file is pushes.
+
+// now to push your code you have to prove it to the git that you are the one who is pushing the changes.
+that authentication is done using ssh key.
+
+// there is also another easier way to do this by configuring your account in from git cmd and putting username and email to configure and you can easily push all the files.
+
+doubut :: which way is more used and more suitable?
+
+6: command: git push origin master
+
+note: check the number of commits you made.
+
+7: command: git remote add origin https://github.com/theamit310/demo-repo.git
+
+## lets understand the flow what we did till now
+local git work:
+	write code --> add code(using git add .) --> commit changes (using git commit -m) --> push chages(using git push) 
+
+
+ 

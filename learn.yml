@@ -1,0 +1,51 @@
+Parameters:
+  DiskVolumeSize:
+    Description: select volume size.
+    ConstraintDescription: Choose size.
+    Type: Number  
+  
+  
+  DiskVolumeType:
+    Default: gp2
+    Description: Choose Disk type.
+    ConstraintDescription: Choose type
+    Type: String
+    AllowedValues: 
+      - gp2
+      - io1
+      - io2
+      - standard
+  KeyName:
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the EC2 instance.
+
+Resources:
+  securityInstance:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+        GroupDescription: Allow http to client host 
+        SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0 
+  ec2VmInstance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-04bf6dcdc9ab498ca
+      SecurityGroups:
+        - !Ref securityInstance 
+
+      Tags:
+        - Key: Name
+          Value: My EC2 Instance
+        - Key: Type
+          Value: Worker Instancess
+      KeyName: !Ref KeyName
+      
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: !Ref DiskVolumeSize
+            VolumeType: !Ref DiskVolumeType

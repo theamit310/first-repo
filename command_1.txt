@@ -1,0 +1,8 @@
+1. -- command for listing all the buckets
+- aws s3 ls
+
+2. -- command for listing contents of a single buckets
+-  aws s3 ls s3://cf-templates-jvozpjagjon8-ap-south-1
+
+3. -- command for listing all the vpcs in the region
+-  aws ec2 describe-vpcs 
